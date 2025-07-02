@@ -3,7 +3,7 @@ on:
   workflow_call:
     inputs:
       artifact-name:
-        description: The name f the deployable artifact hashFiles
+        description: The name of the deployable artifact files
         type: string
         required: false
         default: dist
