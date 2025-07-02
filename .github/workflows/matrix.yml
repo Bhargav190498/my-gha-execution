@@ -7,6 +7,14 @@ jobs:
       matrix:
         node-version: [12, 14, 18]
         operating-system: [ubuntu-latest, windows-latest]
+        include:
+          - node-version: 18
+            operating-system: macos-latest
+          - node-version: 18
+            operating-system: windows-latest
+        exclude:
+          - node-version: 12
+            operating-system: windows-latest
     runs-on: ${{ matrix.operating-system }}
     steps:
       - name: Get code
@@ -19,4 +27,3 @@ jobs:
         run: npm ci
       - name: Build Project
         run: npm run build
-
